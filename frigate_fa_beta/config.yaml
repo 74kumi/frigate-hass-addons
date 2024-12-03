@@ -11,6 +11,13 @@ slug: frigate-fa-beta
 description: NVR with realtime local object detection for IP cameras
 url: "https://github.com/blakeblackshear/frigate"
 image: ghcr.io/blakeblackshear/frigate
+deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
 startup: application
 boot: auto
 init: false
